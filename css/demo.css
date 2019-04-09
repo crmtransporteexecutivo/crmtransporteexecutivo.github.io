@@ -20,7 +20,7 @@ a {
 	font-family: 'Great Vibes', sans-serif;
 	color: #FF82AB;
 	font-size: 30px;
-	background: #87CEFF;
+	background: #333;
 }
 
 .container > header {
@@ -100,7 +100,7 @@ a {
 
 .related a {
 	font-weight: 700;
-	color: #3498db;
+	color: #333;
 	opacity: 0.7;
 }
 
