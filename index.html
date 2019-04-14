@@ -13,36 +13,19 @@
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="css/icons.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/alexandre2019.css" />
 		<link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
 		<script src="js/modernizr.custom.js"></script>
 	</head>
 	<style>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-  position: fixed;
-  z-index: 9999;
-  width: 100%;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-  background-color: #111;
+	.fixar {
+    position:fixed;
+    margin-top: 0px !important;
+	z-index:10000;
+	width: 100%;
+	left: 0; 
+	top: 0;
 }
 header {
 	font-family: 'Great Vibes', cursive;
@@ -51,23 +34,18 @@ header {
 .h1 {
 	font-family: 'Great Vibes', cursive;
 	font: 'Great Vibes', cursive;
-		}
+		}	
 	</style>
-	<body>
-	<center><nav>
-	<ul>
-		<li><a href="#contato">Contato</a></li>
-		<li><a href="#carro">Carro</a></li>
-		<li><a href="#servico">Serviço</a></li>
-		<li><a href="#missao">Missão</a></li>
-		<li><a href="#empresa">Empresa</a></li>
-	
-	
-	
-	
-
-	</ul>
-	</nav></center>
+	<div class="fixar">
+<div id='cssmenu'>
+<ul>
+   <li class='active'><a href='#'><span>Home</span></a></li>
+   <li class='has-sub'><a href="#empresa"><span>Empresa</span></a></li>
+   <li class='has-sub'><a href="#missao"><span>Missão</span></a></li>
+   <li class='has-sub'><a href="#servico"><span>Serviços</span></a></li>
+   	<li class='has-sub'><a href="#carro"><span>Carro</span></a></li>
+	<li class='has-sub'><a href="#contato"><span>Contato</span></a></li>
+</ul></div></div>
 	<br>
 	<br>
     <br>
@@ -240,5 +218,16 @@ festas, aeroportos, portos, pontos turísticos, particular.</p>
 				<p>Desenvolvido por:<a href="#">DarthDesign</a></p>
 			</section>
 		</div><!-- /container -->
-	</body>
+		<script>
+var offset = $('#cssmenu').offset().top;
+var $cssmenu = $('#cssmenu'); // guardar o elemento na memoria para melhorar performance
+$(document).on('scroll', function () {
+    if (offset <= $(window).scrollTop()) {
+        $cssmenu.addClass('fixar');
+    } else {
+        $cssmenu.removeClass('fixar');
+    }
+});
+</script>
+		</body>
 </html>
